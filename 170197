@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="zh-Hant">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>品牌資料繳交追蹤系統</title>
   <style>
     body {
@@ -33,14 +33,6 @@
       color: #155724;
       font-weight: bold;
     }
-    .upload-btn {
-      padding: 6px 12px;
-      background-color: #007bff;
-      color: white;
-      border: none;
-      cursor: pointer;
-      border-radius: 4px;
-    }
   </style>
 </head>
 <body>
@@ -59,19 +51,17 @@
         <th>清酒</th>
       </tr>
     </thead>
-    <tbody>
-      <!-- 將由 JS 動態插入 -->
-    </tbody>
+    <tbody></tbody>
   </table>
 
   <script>
     const people = [
       { name: '陳碩穎', store: '3014', shift: 'R', brands: ['波特嘉', '高原騎士', '嘉寶', '八八坑道', '百加德', '出羽櫻'] },
-      { name: '陳憶如', store: '3014', shift: 'R', brands: ['CALEM', 'BOWMORE', '人頭馬', '玉山', 'patron', '出羽櫻'] },
-      { name: '熊昱翰', store: '3014', shift: 'R', brands: ['MOËT', '皇家禮炮', '宣尼斯', '玉山', '琴酒', '獺祭'] },
+      { name: '陳憶如', store: '3014', shift: 'R', brands: ['CALEM', 'BOWMORE', '人頭馬', '玉山', 'Patron', '出羽櫻'] },
+      { name: '熊昱翰', store: '3014', shift: 'R', brands: ['MOET', '皇家禮炮', '宣尼斯', '玉山', '琴酒', '獺祭'] },
       { name: '施禹辰', store: '3014', shift: 'R', brands: ['奔富', '格蘭菲迪', '軒尼斯', '金門', 'Don Julio', '八海山'] },
       { name: '黃舜慈', store: '3259', shift: 'Q', brands: ['Inniskillin', 'Mortlach', 'Remy Martin', '馬祖高粱', 'Baileys', '八海山'] },
-      { name: '張明月', store: '3276', shift: 'R', brands: ['雙人舞', '百富', '馬爹利', '金門', 'choya', '獺祭'] },
+      { name: '張明月', store: '3276', shift: 'R', brands: ['雙人舞', '百富', '馬爹利', '金門', 'Choya', '獺祭'] },
     ];
 
     const brandNames = ['葡萄酒', '威士忌', '白蘭地', '高粱酒', '酒其他', '清酒'];
@@ -85,7 +75,7 @@
           <td>${person.name}</td>
           <td>${person.store}</td>
           <td>${person.shift}</td>
-          ${brandNames.map((brand, idx) => {
+          ${brandNames.map((_, idx) => {
             const key = \`\${i}-\${idx}\`;
             const submitted = localStorage.getItem(key) === '1';
             return \`<td class="\${submitted ? 'submitted' : ''}" onclick="toggleSubmit('\${key}', this)">\${submitted ? '✓' : '－'}</td>\`;
